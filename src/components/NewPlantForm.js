@@ -22,7 +22,12 @@ function NewPlantForm({ onAddPlant }) {
     })
   })
   .then((r) => r.json())
-  .then(newPlant => onAddPlant(newPlant));
+  .then(newPlant => onAddPlant(newPlant))
+  .then(
+    setName(""),
+    setImage(""),
+    setPrice(""),
+  )
   // add new plant to my page
   };
 
