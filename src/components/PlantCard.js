@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 // passing one plant as a prop
 function PlantCard({ plant }) {
   //console.log(plant);
   //destructure out plant object
   const { name, image, price } = plant;
-  
+  const [inStock, setInStock] = useState(true);
+
   return (
     <li className="card">
-      <img src={image} alt={name} />
-      <h4>{name}</h4>
-      <p>Price: {price}</p>
-      {true ? (
+      <img src={ image } alt={ name } />
+      <h4>{ name }</h4>
+      <p>Price: { price }</p>
+      { inStock ? (
         <button className="primary">In Stock</button>
       ) : (
         <button>Out of Stock</button>
@@ -21,3 +22,5 @@ function PlantCard({ plant }) {
 }
 
 export default PlantCard;
+// -I can mark a plant as "sold out".
+// i need state here to control the variable of in or out of stock changing
