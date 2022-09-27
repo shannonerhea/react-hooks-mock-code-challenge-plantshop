@@ -5,6 +5,7 @@ import Search from "./Search";
 
 function PlantPage() {
   const [plants, setPlants] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
 // fetch the pants and put them in the plants arr
   useEffect(() => {
@@ -21,11 +22,22 @@ function PlantPage() {
     const updatedPlantsArr = [...plants, newPlant ];
     setPlants(updatedPlantsArr);
    };
+
+   function handleDeletePlant(id) {
+    const updatedPlantsArr = plants.filter(plant => plant.id !== id);
+    setPlants(updatedPlantsArr);
+   };
+
+   const displayPlants = plants.filter((plant) => {
+    return plant.name.toLowerCase().includes(searchTerm.toLowerCase());
+   });
+
+
   return (
     <main>
       <NewPlantForm onAddPlant={ handleAddPlant }/>
-      <Search />
-      <PlantList plants={ plants }/>
+      <Search searchTerm={ searchTerm } onSearchChange={ setSearchTerm }/>
+      <PlantList plants={ displayPlants } onDeletePlant={ handleDeletePlant }/>
     </main>
   );
 }

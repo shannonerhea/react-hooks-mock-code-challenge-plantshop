@@ -41,60 +41,6 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
-    },
-    {
-      "name": "new Plant",
-      "image": "http://localhost:3000/images/zz-plant.jpg",
-      "price": 12,
-      "id": 8
-    },
-    {
-      "name": "Shannone Ball",
-      "image": "http://localhost:3000/images/zz-plant.jpg",
-      "price": 13.97,
-      "id": 9
-    },
-    {
-      "name": "Shannone Ball",
-      "image": "http://localhost:3000/images/zz-plant.jpg",
-      "price": 13.97,
-      "id": 10
-    },
-    {
-      "name": "Shannone Ball",
-      "image": "http://localhost:3000/images/zz-plant.jpg",
-      "price": 13.97,
-      "id": 11
-    },
-    {
-      "name": "NewPlant!!",
-      "image": "http://localhost:3000/images/pilea.jpg",
-      "price": 7,
-      "id": 12
-    },
-    {
-      "name": "NewPlant!!",
-      "image": "http://localhost:3000/images/pilea.jpg",
-      "price": 7,
-      "id": 13
-    },
-    {
-      "name": "NewPlant!!",
-      "image": "http://localhost:3000/images/pilea.jpg",
-      "price": 7,
-      "id": 14
-    },
-    {
-      "name": "NewPlant!!",
-      "image": "http://localhost:3000/images/pilea.jpg",
-      "price": 7,
-      "id": 15
-    },
-    {
-      "name": "NewPlant!!",
-      "image": "http://localhost:3000/images/pilea.jpg",
-      "price": 7,
-      "id": 16
     }
   ]
 }

@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 
 // passing one plant as a prop
-function PlantCard({ plant }) {
+function PlantCard({ plant, onDeletePlant }) {
   //console.log(plant);
   //destructure out plant object
-  const { name, image, price } = plant;
+  const { id, name, image, price } = plant;
   const [inStock, setInStock] = useState(true);
 
   function handleStockToggle() {
     setInStock(inStock => !inStock)
+  };
+
+  function handleDelete() {
+    fetch(`http://localhost:6001/plants/${id}`, {
+      method: "DELETE",
+    })
+
+    onDeletePlant(id);
   };
 
   return (
@@ -21,6 +29,7 @@ function PlantCard({ plant }) {
       ) : (
         <button onClick={handleStockToggle}>Out of Stock</button>
       )}
+      <button onClick={handleDelete}>Delete</button>
     </li>
   );
 }
@@ -28,3 +37,6 @@ function PlantCard({ plant }) {
 export default PlantCard;
 // -I can mark a plant as "sold out".
 // i need state here to control the variable of in or out of stock changing
+//ADVANCED DELIVERABLE
+// -As a user:
+// 2. -I can delete a plant and it is still gone when I refresh the page.
