@@ -1,13 +1,35 @@
 import React, { useState } from "react";
 
-function NewPlantForm() {
-  const [name, setName] = useState(""); // add value to input field in jsx
+function NewPlantForm({ onAddPlant }) {
+  const [name, setName] = useState(""); // add value to input field in jsx and onChange={}
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
+
+  //console.log({name})
+  function handleSubmit(e) {
+    e.preventDefault()
+    //add POST request to form
+    fetch("http://localhost:6001/plants", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+     },
+     body: JSON.stringify({
+        name: name,
+        image: image,
+        price: price,
+
+    })
+  })
+  .then((r) => r.json())
+  .then(newPlant => onAddPlant(newPlant));
+  // add new plant to my page
+  };
+
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input 
         type="text" 
         name="name" 
@@ -22,7 +44,14 @@ function NewPlantForm() {
         value={image}
         onChange={(e) => setImage(e.target.value)}
          />
-        <input type="number" name="price" step="0.01" placeholder="Price" />
+        <input 
+        type="number" 
+        name="price" 
+        step="0.01" 
+        placeholder="Price"
+        value={price}
+        onChange={(e) => setPrice(parseFloat(e.target.value))}
+         />
         <button type="submit">Add Plant</button>
       </form>
     </div>
@@ -30,6 +59,7 @@ function NewPlantForm() {
 }
 
 export default NewPlantForm;
+//parseFloat makes the str a decimal num
 // make a controlled form by connecting each input to a state variable
 // request to the backend to post on form 
 // #### POST `/plants`

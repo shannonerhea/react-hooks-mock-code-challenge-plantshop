@@ -15,13 +15,17 @@ function PlantPage() {
     })        //.then(console.log)to see i get data from API
   },[]);
    //console.log(plants); // to ck if plants are in plantsArr in state
-
    // passing plants to PlantList compoment to map over and render each card 
+
+   function handleAddPlant(newPlant) {
+    const updatedPlantsArr = [...plants, newPlant ];
+    setPlants(updatedPlantsArr);
+   };
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onAddPlant={ handleAddPlant }/>
       <Search />
-      <PlantList plants={plants}/>
+      <PlantList plants={ plants }/>
     </main>
   );
 }
