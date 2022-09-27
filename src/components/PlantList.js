@@ -1,9 +1,16 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+
+// passing prop of plants from plant pg to have cards show up 
+// mapping over then to render each card individually
+function PlantList({ plants }) {
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">
+      {plants.map((plant) => {
+      return <PlantCard />;
+    })}
+    </ul>
   );
 }
 
