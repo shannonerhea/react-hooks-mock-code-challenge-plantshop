@@ -6,7 +6,7 @@ import Search from "./Search";
 function PlantPage() {
   const [plants, setPlants] = useState([]);
 
-// fetch the pants and put them in the plants arr 
+// fetch the pants and put them in the plants arr
   useEffect(() => {
     fetch(" http://localhost:6001/plants")
     .then((r) => r.json())

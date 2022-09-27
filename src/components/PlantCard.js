@@ -3,7 +3,9 @@ import React from "react";
 // passing one plant as a prop
 function PlantCard({ plant }) {
   //console.log(plant);
+  //destructure out plant object
   const { name, image, price } = plant;
+  
   return (
     <li className="card">
       <img src={image} alt={name} />
