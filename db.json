@@ -41,6 +41,42 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "New Plant",
+      "image": "http://localhost:3000/images/zz-plant.jpg",
+      "price": 12.5,
+      "id": 8
+    },
+    {
+      "name": "New Plant",
+      "image": "http://localhost:3000/images/zz-plant.jpg",
+      "price": 12.5,
+      "id": 9
+    },
+    {
+      "name": "New Plant 01",
+      "image": "http://localhost:3000/images/zz-plant.jpg",
+      "price": 17,
+      "id": 10
+    },
+    {
+      "name": "Another New Plant",
+      "image": "http://localhost:3000/images/pilea.jpg",
+      "price": 100,
+      "id": 11
+    },
+    {
+      "name": "Yet Another New Plant ",
+      "image": "http://localhost:3000/images/jade.jpg",
+      "price": 500,
+      "id": 12
+    },
+    {
+      "name": "Ok Just Another New Plant",
+      "image": "http://localhost:3000/images/monstera.jpg",
+      "price": 1000,
+      "id": 13
     }
   ]
 }
