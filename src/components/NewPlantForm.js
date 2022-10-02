@@ -64,6 +64,7 @@ function NewPlantForm({ onAddPlant }) {
 }
 
 export default NewPlantForm;
+
 //parseFloat makes the str a decimal num
 // make a controlled form by connecting each input to a state variable
 // request to the backend to post on form 
