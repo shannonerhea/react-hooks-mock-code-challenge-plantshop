@@ -2,9 +2,8 @@ import React from "react";
 
 function PlantCard({ plant }) {
   //console.log(plant)
-  const {image, name, price } = plant
+  const { image, name, price } = plant;
 
-  
   return (
     <li className="card">
       <img src={image} alt={name} />
